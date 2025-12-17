@@ -1,10 +1,10 @@
-# 🏥 Mini Hospital Management System (HMS)
+# Mini Hospital Management System (HMS)
 
 A Django-based Mini Hospital Management System focused on **doctor availability management** and **patient appointment booking** with **role-based authentication**.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project simulates a real-world hospital workflow where:
 
@@ -16,40 +16,40 @@ The system ensures **secure authentication**, **role-based access control**, and
 
 ---
 
-## 🚀 Features
+##  Features
 
-### 🔐 Authentication & Authorization
+###  Authentication & Authorization
 - Signup and login for Doctor and Patient
 - Secure password hashing
 - Role-based access control
 - Unauthorized access protection
 
-### 👨‍⚕️ Doctor
+###  Doctor
 - Login to doctor dashboard
 - View own availability slots
 - View booked appointments
 - Cannot access patient features
 
-### 🧑‍🤝‍🧑 Patient
+###  Patient
 - Login to patient dashboard
 - View all future, unbooked doctor slots
 - Book one available slot
 - Once booked, slot becomes unavailable to others
 
-### 🛠 Admin Panel
+###  Admin Panel
 - Create and manage users
 - Assign roles (doctor/patient)
 - Create doctor availability slots
 - View all bookings
 
-### 🔒 Data Safety
+###  Data Safety
 - Uses database transactions
 - Prevents race conditions using `select_for_update()`
 - Ensures no double booking of slots
 
 ---
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 - **Backend:** Django
 - **Database:** PostgreSQL
@@ -59,7 +59,7 @@ The system ensures **secure authentication**, **role-based access control**, and
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
     hms_project/
     │
