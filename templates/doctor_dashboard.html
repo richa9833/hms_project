@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Dashboard</title>
+</head>
+<body>
+
+<h2>Doctor Dashboard</h2>
+
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Booked By</th>
+    </tr>
+
+    {% for slot in slots %}
+    <tr>
+        <td>{{ slot.date }}</td>
+        <td>{{ slot.start_time }} - {{ slot.end_time }}</td>
+        <td>
+            {% if slot.is_booked %}
+                Booked
+            {% else %}
+                Available
+            {% endif %}
+        </td>
+        <td>
+            {% if slot.is_booked and slot.booking_set.first %}
+                {{ slot.booking_set.first.patient.username }}
+            {% else %}
+                -
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="4">No slots created</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
