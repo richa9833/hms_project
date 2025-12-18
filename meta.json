@@ -1,0 +1,48 @@
+{
+  "C:\\Users\\Richa\\PycharmProjects\\hms_project\\email_service\\serverless.yml": {
+    "versionFramework": "4.28.0",
+    "servicePath": "C:\\Users\\Richa\\PycharmProjects\\hms_project\\email_service\\serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "hms-email-service",
+      "provider": {
+        "name": "aws",
+        "runtime": "python3.10"
+      },
+      "functions": {
+        "sendEmail": {
+          "handler": "handler.send_email",
+          "events": [
+            {
+              "http": {
+                "path": "send-email",
+                "method": "post"
+              }
+            }
+          ]
+        }
+      },
+      "plugins": [
+        "serverless-offline"
+      ]
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "python3.10"
+    },
+    "error": {
+      "message": "Unable to reach the Serverless API (fetch failed; Connect Timeout Error (attempted address: core.serverless.com:443, timeout: 10000ms); code: UND_ERR_CONNECT_TIMEOUT).\nPlease verify your network connection and try again.",
+      "code": "AUTH_FAILED"
+    },
+    "serviceRawFile": "service: hms-email-service\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: python3.10\r\n\r\nfunctions:\r\n  sendEmail:\r\n    handler: handler.send_email\r\n    events:\r\n      - http:\r\n          path: send-email\r\n          method: post\r\n\r\nplugins:\r\n  - serverless-offline\r\n",
+    "command": [
+      "offline"
+    ],
+    "options": {},
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}
