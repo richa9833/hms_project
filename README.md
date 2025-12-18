@@ -83,7 +83,10 @@ The system ensures **secure authentication**, **role-based access control**, and
     │   ├── signup.html
     │   ├── patient_dashboard.html
     │   └── doctor_dashboard.html
-    │
+    ├── email_services/
+    │   ├── handler.py
+    │   ├── serverless.yml
+    │   ├── requirements.txt
     ├── manage.py
     ├── db.sqlite3              # Database
     └── README.md
