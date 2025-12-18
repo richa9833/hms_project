@@ -1,18 +1,19 @@
 # Mini Hospital Management System (HMS)
 
-A Django-based Mini Hospital Management System focused on **doctor availability management** and **patient appointment booking** with **role-based authentication**.
+A Django-based Mini Hospital Management System focused on **doctor availability management**, **patient appointment booking**, and **email notifications using a Serverless service**.
 
 ---
 
-## Project Overview
+##  Project Overview
 
 This project simulates a real-world hospital workflow where:
 
-- **Doctors** can manage their availability slots.
-- **Patients** can view and book available doctor slots.
-- **Admin** can manage users, roles, slots, and bookings.
+- **Doctors** manage their availability slots.
+- **Patients** view and book available doctor slots.
+- **Admin** manages users, roles, slots, and bookings.
+- **Email notifications** are sent on signup and booking using a **Serverless (AWS Lambda) service**.
 
-The system ensures **secure authentication**, **role-based access control**, and **transaction-safe booking** to avoid double bookings.
+The system ensures **secure authentication**, **role-based access control**, and **transaction-safe booking** to prevent double bookings.
 
 ---
 
@@ -26,24 +27,32 @@ The system ensures **secure authentication**, **role-based access control**, and
 
 ###  Doctor
 - Login to doctor dashboard
-- View own availability slots
+- Create and manage availability slots
 - View booked appointments
-- Cannot access patient features
+- Can only access own data
 
 ###  Patient
 - Login to patient dashboard
 - View all future, unbooked doctor slots
 - Book one available slot
-- Once booked, slot becomes unavailable to others
+- Slot becomes unavailable once booked
 
 ###  Admin Panel
 - Create and manage users
-- Assign roles (doctor/patient)
+- Assign roles (doctor / patient)
 - Create doctor availability slots
 - View all bookings
 
+### Email Notifications (Serverless)
+- Separate Serverless email service using Python
+- Sends emails for:
+  - **Signup Welcome Email**
+  - **Booking Confirmation Email**
+- Uses SMTP (Mailtrap for local testing)
+- Can be tested locally using `serverless-offline`
+
 ###  Data Safety
-- Uses database transactions
+- Database transactions used
 - Prevents race conditions using `select_for_update()`
 - Ensures no double booking of slots
 
@@ -52,12 +61,17 @@ The system ensures **secure authentication**, **role-based access control**, and
 ##  Tech Stack
 
 - **Backend:** Django
-- **Database:** PostgreSQL
+- **Database:** PostgreSQL / SQLite (local)
 - **ORM:** Django ORM
 - **Authentication:** Session-based
 - **Admin:** Django Admin Panel
+- **Email Service:** Serverless Framework (AWS Lambda – local via serverless-offline)
 
 ---
+
+
+
+
 
 ##  Project Structure
 
